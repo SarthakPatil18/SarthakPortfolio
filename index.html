@@ -1,827 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sarthak Patil | Portfolio</title>
+<title>Sarthak Patil</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    :root{
-
-      --bg:#050505;
-      --card:#111111;
-      --text:#f5f5f5;
-      --muted:#8b8b8b;
-
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-
-      font-family:'DM Sans',sans-serif;
-
-      background:var(--bg);
-
-      background-image:
-      radial-gradient(circle at top left, rgba(255,255,255,0.03), transparent 30%),
-      radial-gradient(circle at bottom right, rgba(255,255,255,0.02), transparent 30%);
-
-      color:var(--text);
-
-      overflow-x:hidden;
-
-      line-height:1.7;
-
-    }
-
-    nav{
-
-      position:fixed;
-
-      top:0;
-      left:0;
-      right:0;
-
-      z-index:1000;
-
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-
-      padding:1.2rem 2rem;
-
-      background:rgba(0,0,0,0.75);
-
-      backdrop-filter:blur(12px);
-
-      border-bottom:1px solid rgba(255,255,255,0.06);
-
-    }
-
-    .logo{
-
-      font-size:1.8rem;
-
-      font-family:'Playfair Display',serif;
-
-      color:white;
-
-      text-decoration:none;
-
-    }
-
-    .nav-links{
-
-      display:flex;
-
-      gap:2rem;
-
-      list-style:none;
-
-    }
-
-    .nav-links a{
-
-      color:var(--muted);
-
-      text-decoration:none;
-
-      transition:0.3s;
-
-      font-size:0.95rem;
-
-    }
-
-    .nav-links a:hover{
-      color:white;
-    }
-
-    section{
-
-      max-width:1200px;
-
-      margin:auto;
-
-      padding:7rem 2rem;
-
-    }
-
-    #home{
-
-      min-height:100vh;
-
-      display:flex;
-
-      align-items:center;
-
-    }
-
-    .hero-tag{
-
-      display:inline-block;
-
-      padding:0.45rem 1rem;
-
-      border:1px solid rgba(255,255,255,0.08);
-
-      border-radius:999px;
-
-      margin-bottom:1.5rem;
-
-      color:var(--muted);
-
-      font-size:0.85rem;
-
-      background:rgba(255,255,255,0.03);
-
-    }
-
-    h1{
-
-      font-family:'Playfair Display',serif;
-
-      font-size:clamp(4rem,9vw,7rem);
-
-      line-height:0.95;
-
-      margin-bottom:1.5rem;
-
-      letter-spacing:-0.05em;
-
-    }
-
-    h2{
-
-      font-family:'Playfair Display',serif;
-
-      font-size:3rem;
-
-      margin-bottom:1rem;
-
-      letter-spacing:-0.03em;
-
-    }
-
-    p{
-      color:var(--muted);
-    }
-
-    .hero-sub{
-
-      max-width:700px;
-
-      font-size:1.1rem;
-
-      margin-bottom:2rem;
-
-    }
-
-    .btn{
-
-      display:inline-block;
-
-      padding:0.95rem 1.7rem;
-
-      border-radius:14px;
-
-      text-decoration:none;
-
-      font-weight:600;
-
-      transition:0.35s ease;
-
-      margin-right:1rem;
-
-    }
-
-    .btn-primary{
-
-      background:#ffffff;
-
-      color:#000000;
-
-    }
-
-    .btn-primary:hover{
-
-      transform:translateY(-4px);
-
-    }
-
-    .btn-outline{
-
-      background:transparent;
-
-      color:#ffffff;
-
-      border:1px solid rgba(255,255,255,0.15);
-
-    }
-
-    .btn-outline:hover{
-
-      background:rgba(255,255,255,0.05);
-
-    }
-
-    .section-label{
-
-      color:#777;
-
-      text-transform:uppercase;
-
-      letter-spacing:0.18em;
-
-      font-size:0.75rem;
-
-      margin-bottom:1rem;
-
-    }
-
-    .about-grid{
-
-      display:grid;
-
-      grid-template-columns:1fr 350px;
-
-      gap:5rem;
-
-      align-items:center;
-
-    }
-
-    .profile-photo{
-
-      width:320px;
-
-      height:320px;
-
-      border-radius:50%;
-
-      overflow:hidden;
-
-      border:1px solid rgba(255,255,255,0.08);
-
-      box-shadow:0 10px 40px rgba(0,0,0,0.45);
-
-    }
-
-    .profile-photo img{
-
-      width:100%;
-      height:100%;
-
-      object-fit:cover;
-
-    }
-
-    .cards{
-
-      display:grid;
-
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-      gap:1.5rem;
-
-      margin-top:2rem;
-
-    }
-
-    .card{
-
-      background:rgba(255,255,255,0.03);
-
-      border:1px solid rgba(255,255,255,0.06);
-
-      backdrop-filter:blur(10px);
-
-      border-radius:24px;
-
-      padding:1.7rem;
-
-      transition:0.35s ease;
-
-    }
-
-    .card:hover{
-
-      transform:translateY(-8px);
-
-      background:rgba(255,255,255,0.05);
-
-      border-color:rgba(255,255,255,0.15);
-
-    }
-
-    .card-icon{
-
-      width:58px;
-      height:58px;
-
-      border-radius:16px;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      background:rgba(255,255,255,0.06);
-
-      margin-bottom:1rem;
-
-      font-size:1.3rem;
-
-      color:white;
-
-    }
-
-    .card h3{
-
-      margin-bottom:0.8rem;
-
-      font-size:1.15rem;
-
-    }
-
-    .contact-box{
-
-      margin-top:2rem;
-
-      background:rgba(255,255,255,0.03);
-
-      border:1px solid rgba(255,255,255,0.06);
-
-      border-radius:24px;
-
-      padding:2rem;
-
-      max-width:700px;
-
-    }
-
-    .contact-row{
-
-      display:flex;
-
-      align-items:center;
-
-      gap:1rem;
-
-      margin-bottom:1.3rem;
-
-    }
-
-    .contact-icon{
-
-      width:50px;
-      height:50px;
-
-      border-radius:14px;
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-
-      background:rgba(255,255,255,0.06);
-
-      color:white;
-
-    }
-
-    .contact-row a{
-
-      color:white;
-
-      text-decoration:none;
-
-    }
-
-    .contact-row a:hover{
-
-      opacity:0.7;
-
-    }
-
-    footer{
-
-      text-align:center;
-
-      padding:2rem;
-
-      color:#666;
-
-      border-top:1px solid rgba(255,255,255,0.06);
-
-    }
-
-    .fade{
-
-      opacity:0;
-
-      transform:translateY(30px);
-
-      transition:all 1s ease;
-
-    }
-
-    .fade.show{
-
-      opacity:1;
-
-      transform:translateY(0);
-
-    }
-
-    @media(max-width:850px){
-
-      .about-grid{
-        grid-template-columns:1fr;
-      }
-
-      .profile-photo{
-        margin:auto;
-      }
-
-      .nav-links{
-        display:none;
-      }
-
-      section{
-        padding:5rem 1.5rem;
-      }
-
-      h1{
-        font-size:4rem;
-      }
-
-    }
-
-  </style>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
 </head>
 
 <body>
 
-  <nav>
+<nav>
 
-    <a href="#" class="logo">SP.</a>
+<div class="logo">SP</div>
 
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-  </nav>
+</nav>
 
-  <section id="home">
+<section class="hero">
 
-    <div class="fade">
+<div class="hero-container">
 
-      <span class="hero-tag">
-        COMPUTER ENGINEER
-      </span>
+<div class="hero-text">
 
-      <h1>
-        Sarthak<br>
-        Patil
-      </h1>
+<span>COMPUTER ENGINEERING STUDENT</span>
 
-      <p class="hero-sub">
+<h1>
+Sarthak<br>
+Patil
+</h1>
 
-        AI enthusiast, builder, and problem solver focused on
-        creating impactful solutions through technology, startups,
-        and continuous learning.
+<p>
 
-      </p>
+Passionate about AI, startups, software development,
+problem solving, and building impactful products.
 
-      <a href="#projects" class="btn btn-primary">
-        View My Work
-      </a>
+</p>
 
-      <a href="#contact" class="btn btn-outline">
-        Let's Connect
-      </a>
+<div class="btns">
 
-    </div>
+<a href="#projects" class="btn white">
+View Work
+</a>
 
-  </section>
+<a href="#contact" class="btn black">
+Contact
+</a>
 
-  <section id="about">
+</div>
 
-    <div class="about-grid fade">
+</div>
 
-      <div>
+<div class="hero-image">
 
-        <p class="section-label">
-          About Me
-        </p>
+<img src="https://lh3.googleusercontent.com/d/1kdMScm85t1qbsCamgnIs9SLPYiOs6nJt">
 
-        <h2>
-          Turning ideas into
-          real-world impact.
-        </h2>
+</div>
 
-        <p>
+</div>
 
-          I’m Sarthak Patil, a Computer Engineering student passionate
-          about AI, software development, startups, and product building.
+</section>
 
-        </p>
+<section id="about">
 
-        <br>
+<h2 class="title">
+About Me
+</h2>
 
-        <p>
+<p style="color:#999; line-height:2; max-width:900px;">
 
-          I actively explore hackathons, open-source opportunities,
-          competitive programming, AI workflows, and real-world problem solving.
+I’m Sarthak Patil, a Computer Engineering student interested in AI,
+software engineering, startups, automation, and product building.
 
-        </p>
+I actively explore hackathons, open-source opportunities,
+competitive programming, and AI-powered solutions.
 
-      </div>
+</p>
 
-      <div class="profile-photo">
+</section>
 
-        <img src="sarth.jpeg" alt="Sarthak Patil">
+<section id="skills">
 
-      </div>
+<h2 class="title">
+Skills
+</h2>
 
-    </div>
+<div class="grid">
 
-  </section>
+<div class="card">
 
-  <section id="skills">
+<i class="fa-brands fa-python"></i>
 
-    <p class="section-label fade">
-      Skills
-    </p>
+<h3>Python</h3>
 
-    <h2 class="fade">
-      Tech I work with
-    </h2>
+<p>
+Automation, AI concepts, and backend development.
+</p>
 
-    <div class="cards">
+</div>
 
-      <div class="card fade">
+<div class="card">
 
-        <div class="card-icon">
-          <i class="fa-brands fa-python"></i>
-        </div>
+<i class="fa-solid fa-code"></i>
 
-        <h3>Python</h3>
+<h3>C++</h3>
 
-        <p>
-          Automation, AI tools, and software development.
-        </p>
+<p>
+DSA, logic building, and competitive programming.
+</p>
 
-      </div>
+</div>
 
-      <div class="card fade">
+<div class="card">
 
-        <div class="card-icon">
-          <i class="fa-solid fa-code"></i>
-        </div>
+<i class="fa-solid fa-globe"></i>
 
-        <h3>C++</h3>
+<h3>Web Development</h3>
 
-        <p>
-          DSA, competitive programming, and problem solving.
-        </p>
+<p>
+Building responsive websites using HTML, CSS & JavaScript.
+</p>
 
-      </div>
+</div>
 
-      <div class="card fade">
+<div class="card">
 
-        <div class="card-icon">
-          <i class="fa-solid fa-globe"></i>
-        </div>
+<i class="fa-solid fa-brain"></i>
 
-        <h3>Web Development</h3>
+<h3>AI & Tools</h3>
 
-        <p>
-          Building websites using HTML, CSS, and JavaScript.
-        </p>
+<p>
+Exploring AI workflows and automation.
+</p>
 
-      </div>
+</div>
 
-      <div class="card fade">
+</div>
 
-        <div class="card-icon">
-          <i class="fa-solid fa-brain"></i>
-        </div>
+</section>
 
-        <h3>AI & Automation</h3>
+<section id="projects">
 
-        <p>
-          Exploring AI workflows, LLMs, and product integration.
-        </p>
+<h2 class="title">
+Projects & Achievements
+</h2>
 
-      </div>
+<div class="grid">
 
-    </div>
+<div class="card">
 
-  </section>
+<h3>AI Legal Assistant</h3>
 
-  <section id="projects">
+<p>
+Built and improved an AI-powered legal assistant
+with better UX and legal risk analysis.
+</p>
 
-    <p class="section-label fade">
-      Projects & Achievements
-    </p>
+</div>
 
-    <h2 class="fade">
-      Things I’ve worked on
-    </h2>
+<div class="card">
 
-    <div class="cards">
+<h3>Agrishield Tracking App</h3>
 
-      <div class="card fade">
+<p>
+Planned a GPS-enabled employee tracking
+and field management platform.
+</p>
 
-        <div class="card-icon">
-          <i class="fa-solid fa-scale-balanced"></i>
-        </div>
+</div>
 
-        <h3>AI Legal Assistant</h3>
+<div class="card">
 
-        <p>
-          Built and improved an AI-powered legal assistant
-          with risk analysis and better UX flow.
-        </p>
+<h3>Hackathons & Datathons</h3>
 
-      </div>
+<p>
+Participated in innovation-focused competitions
+and startup-based problem solving.
+</p>
 
-      <div class="card fade">
+</div>
 
-        <div class="card-icon">
-          <i class="fa-solid fa-location-dot"></i>
-        </div>
+<div class="card">
 
-        <h3>Agrishield Tracking App</h3>
+<h3>Open Source Exploration</h3>
 
-        <p>
-          Planned a GPS-enabled employee tracking and
-          field management system for Agrishield Industries.
-        </p>
+<p>
+Exploring GSoC and collaborative software development.
+</p>
 
-      </div>
+</div>
 
-      <div class="card fade">
+</div>
 
-        <div class="card-icon">
-          <i class="fa-solid fa-trophy"></i>
-        </div>
+</section>
 
-        <h3>Hackathons & Datathons</h3>
+<section id="contact">
 
-        <p>
-          Participated in innovation-focused competitions
-          and startup-oriented problem solving.
-        </p>
+<h2 class="title">
+Contact
+</h2>
 
-      </div>
+<div class="contact">
 
-      <div class="card fade">
+<div class="contact-item">
 
-        <div class="card-icon">
-          <i class="fa-brands fa-github"></i>
-        </div>
+<i class="fa-solid fa-envelope"></i>
 
-        <h3>Open Source Exploration</h3>
+<a href="mailto:sarthak.p0718@gmail.com">
+sarthak.p0718@gmail.com
+</a>
 
-        <p>
-          Exploring GSoC, collaborative software development,
-          and contribution workflows.
-        </p>
+</div>
 
-      </div>
+<div class="contact-item">
 
-      <div class="card fade">
+<i class="fa-solid fa-phone"></i>
 
-        <div class="card-icon">
-          <i class="fa-solid fa-code"></i>
-        </div>
+<a href="tel:8767843878">
+8767843878
+</a>
 
-        <h3>Competitive Programming</h3>
+</div>
 
-        <p>
-          Practicing DSA and coding through LeetCode
-          and structured problem solving.
-        </p>
+<div class="contact-item">
 
-      </div>
+<i class="fa-brands fa-linkedin"></i>
 
-      <div class="card fade">
+<a href="https://www.linkedin.com/in/sarthak-patil07/" target="_blank">
+linkedin.com/in/sarthak-patil07
+</a>
 
-        <div class="card-icon">
-          <i class="fa-brands fa-cisco"></i>
-        </div>
+</div>
 
-        <h3>Cisco Learning Modules</h3>
+<div class="contact-item">
 
-        <p>
-          Completed networking and technology coursework
-          through Cisco learning platforms.
-        </p>
+<i class="fa-brands fa-github"></i>
 
-      </div>
+<a href="https://github.com/SarthakPatil18" target="_blank">
+github.com/SarthakPatil18
+</a>
 
-    </div>
+</div>
 
-  </section>
+</div>
 
-  <section id="contact">
+</section>
 
-    <p class="section-label fade">
-      Contact
-    </p>
+<footer>
 
-    <h2 class="fade">
-      Let’s connect
-    </h2>
+© 2026 Sarthak Patil
 
-    <div class="contact-box fade">
-
-      <div class="contact-row">
-
-        <div class="contact-icon">
-          <i class="fa-solid fa-envelope"></i>
-        </div>
-
-        <a href="mailto:sarthak.p0718@gmail.com">
-          sarthak.p0718@gmail.com
-        </a>
-
-      </div>
-
-      <div class="contact-row">
-
-        <div class="contact-icon">
-          <i class="fa-solid fa-phone"></i>
-        </div>
-
-        <a href="tel:8767843878">
-          8767843878
-        </a>
-
-      </div>
-
-      <div class="contact-row">
-
-        <div class="contact-icon">
-          <i class="fa-brands fa-linkedin"></i>
-        </div>
-
-        <a href="https://www.linkedin.com/in/sarthak-patil07/" target="_blank">
-          linkedin.com/in/sarthak-patil07
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <footer>
-    © 2026 Sarthak Patil. All rights reserved.
-  </footer>
-
-  <script>
-
-    const observer = new IntersectionObserver((entries)=>{
-
-      entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-          entry.target.classList.add("show");
-        }
-
-      });
-
-    });
-
-    document.querySelectorAll(".fade").forEach((el)=>{
-      observer.observe(el);
-    });
-
-  </script>
+</footer>
 
 </body>
+
 </html>
